@@ -1,4 +1,4 @@
-package com.student.librarymanager.model;
+package com.doga.taskmanager.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,9 +7,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Author {
+public class Project {
     private Long id;
-    private String firstName;
-    private String lastName;
-    private String nationality;
+    private String name;
+    private String description;
 }

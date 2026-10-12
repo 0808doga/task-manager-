@@ -1,10 +1,10 @@
-# Library Manager
+# Task Manager
 
 ## Description
-Library Manager is a backend for a small library: it keeps a catalogue of books and their authors and a list of registered members.
-Later labs add borrowing (loans), persistence in PostgreSQL and secured access for librarians.
+Task Manager is a backend for organising personal and team work: users create tasks, group them into projects and label them with categories.
+Later labs add persistence in PostgreSQL, a service layer, validation and secured access per user.
 
-**Main entities:** `Book`, `Author`, `Member` (planned: `Loan`)
+**Main entities:** `Task`, `Project`, `Category`
 
 ## Technology Stack
 - Java 21 (builds and runs on newer JDKs too)
@@ -17,7 +17,7 @@ Later labs add borrowing (loans), persistence in PostgreSQL and secured access f
 ## How to Run
 1. Clone the repository
 2. Open in IntelliJ IDEA (it imports `pom.xml` as a Maven project)
-3. Run `LibraryManagerApplication` (or `./mvnw spring-boot:run`)
+3. Run `TaskManagerApplication` (or `./mvnw spring-boot:run`)
 4. Application starts on `http://localhost:8080`
 5. H2 console: `http://localhost:8080/h2-console` (JDBC URL `jdbc:h2:mem:testdb`, user `sa`, empty password)
 
@@ -30,29 +30,29 @@ Tests: `./mvnw test`
 - `GET /api/hello/{name}` - Personal greeting
 - `POST /api/hello` - Echo the request body
 
-### Book Management
-- `GET /api/books` - Get all books (optional filter `?available=true|false`)
-- `GET /api/books/{id}` - Get single book
-- `POST /api/books` - Create new book
-- `PUT /api/books/{id}` - Update book
-- `PATCH /api/books/{id}` - Partially update book (only fields present in the body)
-- `DELETE /api/books/{id}` - Delete book
+### Task Management
+- `GET /api/tasks` - Get all tasks (optional filter `?completed=true|false`)
+- `GET /api/tasks/{id}` - Get single task
+- `POST /api/tasks` - Create new task
+- `PUT /api/tasks/{id}` - Update task
+- `PATCH /api/tasks/{id}` - Partially update task (only fields present in the body)
+- `DELETE /api/tasks/{id}` - Delete task
 
-### Author Management
-- `GET /api/authors` - Get all authors
-- `GET /api/authors/{id}` - Get single author
-- `POST /api/authors` - Create new author
-- `PUT /api/authors/{id}` - Update author
-- `DELETE /api/authors/{id}` - Delete author
+### Project Management
+- `GET /api/projects` - Get all projects
+- `GET /api/projects/{id}` - Get single project
+- `POST /api/projects` - Create new project
+- `PUT /api/projects/{id}` - Update project
+- `DELETE /api/projects/{id}` - Delete project
 
-### Member Management
-- `GET /api/members` - Get all members
-- `GET /api/members/{id}` - Get single member
-- `POST /api/members` - Create new member
-- `PUT /api/members/{id}` - Update member
-- `DELETE /api/members/{id}` - Delete member
+### Category Management
+- `GET /api/categories` - Get all categories
+- `GET /api/categories/{id}` - Get single category
+- `POST /api/categories` - Create new category
+- `PUT /api/categories/{id}` - Update category
+- `DELETE /api/categories/{id}` - Delete category
 
-A Postman collection with all requests is in `postman/library-manager-lab1.postman_collection.json`
+A Postman collection with all requests is in `postman/task-manager-lab1.postman_collection.json`
 (Postman → Import → select the file).
 
 ## Development Status
@@ -65,4 +65,4 @@ A Postman collection with all requests is in `postman/library-manager-lab1.postm
 - [ ] Lab 7: Defense
 
 ## Author
-[Your Name]
+Doga

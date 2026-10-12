@@ -1,6 +1,6 @@
 {
   "info": {
-    "name": "Library Manager - Lab 1",
+    "name": "Task Manager - Lab 1",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "item": [
@@ -77,15 +77,15 @@
       ]
     },
     {
-      "name": "Books",
+      "name": "Tasks",
       "item": [
         {
-          "name": "GET All Books",
+          "name": "GET All Tasks",
           "request": {
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:8080/api/books",
+              "raw": "http://localhost:8080/api/tasks",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -93,18 +93,18 @@
               "port": "8080",
               "path": [
                 "api",
-                "books"
+                "tasks"
               ]
             }
           }
         },
         {
-          "name": "GET Available Books",
+          "name": "GET Completed Tasks",
           "request": {
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:8080/api/books?available=true",
+              "raw": "http://localhost:8080/api/tasks?completed=true",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -112,11 +112,11 @@
               "port": "8080",
               "path": [
                 "api",
-                "books"
+                "tasks"
               ],
               "query": [
                 {
-                  "key": "available",
+                  "key": "completed",
                   "value": "true"
                 }
               ]
@@ -124,12 +124,12 @@
           }
         },
         {
-          "name": "GET Single Book",
+          "name": "GET Single Task",
           "request": {
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:8080/api/books/1",
+              "raw": "http://localhost:8080/api/tasks/1",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -137,14 +137,14 @@
               "port": "8080",
               "path": [
                 "api",
-                "books",
+                "tasks",
                 "1"
               ]
             }
           }
         },
         {
-          "name": "POST Create Book",
+          "name": "POST Create Task",
           "request": {
             "method": "POST",
             "header": [
@@ -154,7 +154,7 @@
               }
             ],
             "url": {
-              "raw": "http://localhost:8080/api/books",
+              "raw": "http://localhost:8080/api/tasks",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -162,17 +162,17 @@
               "port": "8080",
               "path": [
                 "api",
-                "books"
+                "tasks"
               ]
             },
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"title\": \"Dune\",\n  \"isbn\": \"9780441172719\",\n  \"publicationYear\": 1965,\n  \"authorId\": 1\n}"
+              "raw": "{\n  \"title\": \"Complete Lab 1\",\n  \"description\": \"Finish all tasks for laboratory 1\",\n  \"completed\": false\n}"
             }
           }
         },
         {
-          "name": "PUT Update Book",
+          "name": "PUT Update Task",
           "request": {
             "method": "PUT",
             "header": [
@@ -182,7 +182,7 @@
               }
             ],
             "url": {
-              "raw": "http://localhost:8080/api/books/1",
+              "raw": "http://localhost:8080/api/tasks/1",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -190,18 +190,18 @@
               "port": "8080",
               "path": [
                 "api",
-                "books",
+                "tasks",
                 "1"
               ]
             },
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"title\": \"Dune (Deluxe Edition)\",\n  \"isbn\": \"9780593099322\",\n  \"publicationYear\": 2019,\n  \"authorId\": 1,\n  \"available\": true\n}"
+              "raw": "{\n  \"title\": \"Complete Lab 1\",\n  \"description\": \"Finish all tasks for laboratory 1\",\n  \"completed\": true\n}"
             }
           }
         },
         {
-          "name": "PATCH Mark Book Borrowed",
+          "name": "PATCH Task",
           "request": {
             "method": "PATCH",
             "header": [
@@ -211,7 +211,7 @@
               }
             ],
             "url": {
-              "raw": "http://localhost:8080/api/books/1",
+              "raw": "http://localhost:8080/api/tasks/1",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -219,23 +219,23 @@
               "port": "8080",
               "path": [
                 "api",
-                "books",
+                "tasks",
                 "1"
               ]
             },
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"available\": false\n}"
+              "raw": "{\n  \"completed\": true\n}"
             }
           }
         },
         {
-          "name": "DELETE Book",
+          "name": "DELETE Task",
           "request": {
             "method": "DELETE",
             "header": [],
             "url": {
-              "raw": "http://localhost:8080/api/books/1",
+              "raw": "http://localhost:8080/api/tasks/1",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -243,19 +243,19 @@
               "port": "8080",
               "path": [
                 "api",
-                "books",
+                "tasks",
                 "1"
               ]
             }
           }
         },
         {
-          "name": "GET Non-existent Book (404)",
+          "name": "GET Non-existent Task (404)",
           "request": {
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:8080/api/books/999",
+              "raw": "http://localhost:8080/api/tasks/999",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -263,7 +263,7 @@
               "port": "8080",
               "path": [
                 "api",
-                "books",
+                "tasks",
                 "999"
               ]
             }
@@ -272,15 +272,15 @@
       ]
     },
     {
-      "name": "Authors",
+      "name": "Projects",
       "item": [
         {
-          "name": "GET All Authors",
+          "name": "GET All Projects",
           "request": {
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:8080/api/authors",
+              "raw": "http://localhost:8080/api/projects",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -288,18 +288,18 @@
               "port": "8080",
               "path": [
                 "api",
-                "authors"
+                "projects"
               ]
             }
           }
         },
         {
-          "name": "GET Single Author",
+          "name": "GET Single Project",
           "request": {
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:8080/api/authors/1",
+              "raw": "http://localhost:8080/api/projects/1",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -307,14 +307,14 @@
               "port": "8080",
               "path": [
                 "api",
-                "authors",
+                "projects",
                 "1"
               ]
             }
           }
         },
         {
-          "name": "POST Create Author",
+          "name": "POST Create Project",
           "request": {
             "method": "POST",
             "header": [
@@ -324,7 +324,7 @@
               }
             ],
             "url": {
-              "raw": "http://localhost:8080/api/authors",
+              "raw": "http://localhost:8080/api/projects",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -332,17 +332,17 @@
               "port": "8080",
               "path": [
                 "api",
-                "authors"
+                "projects"
               ]
             },
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"firstName\": \"Frank\",\n  \"lastName\": \"Herbert\",\n  \"nationality\": \"American\"\n}"
+              "raw": "{\n  \"name\": \"University\",\n  \"description\": \"Semester assignments\"\n}"
             }
           }
         },
         {
-          "name": "PUT Update Author",
+          "name": "PUT Update Project",
           "request": {
             "method": "PUT",
             "header": [
@@ -352,7 +352,7 @@
               }
             ],
             "url": {
-              "raw": "http://localhost:8080/api/authors/1",
+              "raw": "http://localhost:8080/api/projects/1",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -360,23 +360,23 @@
               "port": "8080",
               "path": [
                 "api",
-                "authors",
+                "projects",
                 "1"
               ]
             },
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"firstName\": \"Frank\",\n  \"lastName\": \"Herbert\",\n  \"nationality\": \"USA\"\n}"
+              "raw": "{\n  \"name\": \"University\",\n  \"description\": \"Winter semester assignments\"\n}"
             }
           }
         },
         {
-          "name": "DELETE Author",
+          "name": "DELETE Project",
           "request": {
             "method": "DELETE",
             "header": [],
             "url": {
-              "raw": "http://localhost:8080/api/authors/1",
+              "raw": "http://localhost:8080/api/projects/1",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -384,7 +384,7 @@
               "port": "8080",
               "path": [
                 "api",
-                "authors",
+                "projects",
                 "1"
               ]
             }
@@ -393,15 +393,15 @@
       ]
     },
     {
-      "name": "Members",
+      "name": "Categories",
       "item": [
         {
-          "name": "GET All Members",
+          "name": "GET All Categories",
           "request": {
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:8080/api/members",
+              "raw": "http://localhost:8080/api/categories",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -409,18 +409,18 @@
               "port": "8080",
               "path": [
                 "api",
-                "members"
+                "categories"
               ]
             }
           }
         },
         {
-          "name": "GET Single Member",
+          "name": "GET Single Category",
           "request": {
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:8080/api/members/1",
+              "raw": "http://localhost:8080/api/categories/1",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -428,14 +428,14 @@
               "port": "8080",
               "path": [
                 "api",
-                "members",
+                "categories",
                 "1"
               ]
             }
           }
         },
         {
-          "name": "POST Create Member",
+          "name": "POST Create Category",
           "request": {
             "method": "POST",
             "header": [
@@ -445,7 +445,7 @@
               }
             ],
             "url": {
-              "raw": "http://localhost:8080/api/members",
+              "raw": "http://localhost:8080/api/categories",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -453,17 +453,17 @@
               "port": "8080",
               "path": [
                 "api",
-                "members"
+                "categories"
               ]
             },
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"fullName\": \"Jan Kowalski\",\n  \"email\": \"jan.kowalski@example.com\",\n  \"phone\": \"+48 500 600 700\"\n}"
+              "raw": "{\n  \"name\": \"Urgent\",\n  \"color\": \"#FF0000\"\n}"
             }
           }
         },
         {
-          "name": "PUT Update Member",
+          "name": "PUT Update Category",
           "request": {
             "method": "PUT",
             "header": [
@@ -473,7 +473,7 @@
               }
             ],
             "url": {
-              "raw": "http://localhost:8080/api/members/1",
+              "raw": "http://localhost:8080/api/categories/1",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -481,23 +481,23 @@
               "port": "8080",
               "path": [
                 "api",
-                "members",
+                "categories",
                 "1"
               ]
             },
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"fullName\": \"Jan Kowalski\",\n  \"email\": \"jan.k@example.com\",\n  \"phone\": \"+48 500 600 700\"\n}"
+              "raw": "{\n  \"name\": \"Urgent\",\n  \"color\": \"#CC0000\"\n}"
             }
           }
         },
         {
-          "name": "DELETE Member",
+          "name": "DELETE Category",
           "request": {
             "method": "DELETE",
             "header": [],
             "url": {
-              "raw": "http://localhost:8080/api/members/1",
+              "raw": "http://localhost:8080/api/categories/1",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -505,7 +505,7 @@
               "port": "8080",
               "path": [
                 "api",
-                "members",
+                "categories",
                 "1"
               ]
             }

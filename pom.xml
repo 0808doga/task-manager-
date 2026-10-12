@@ -8,10 +8,10 @@
 		<version>4.1.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.student</groupId>
-	<artifactId>library-manager</artifactId>
+	<groupId>com.doga</groupId>
+	<artifactId>task-manager</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>library-manager</name>
+	<name>task-manager</name>
 	<description/>
 	<url/>
 	<licenses>

@@ -1,10 +1,10 @@
-package com.student.librarymanager;
+package com.doga.taskmanager;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class LibraryManagerApplicationTests {
+class TaskManagerApplicationTests {
 
 	@Test
 	void contextLoads() {
