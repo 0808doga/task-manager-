@@ -65,4 +65,4 @@ A Postman collection with all requests is in `postman/task-manager-lab1.postman_
 - [ ] Lab 7: Defense
 
 ## Author
-Doga
+Doga Sımsek 34489
